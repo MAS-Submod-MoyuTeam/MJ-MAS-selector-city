@@ -6,8 +6,8 @@ init -99 python in mas_selspr:
     PROMPT_MAP["cushion_acs"] = {
         "_ev": "mj__cushion_acs_select",
         "_min-items": 1,
-        "change": "Do you want to rest your arms on a different cushion?",
-        "wear": "Do you want to rest your arms on a cushion?",
+        "change": "你想把胳膊放在另一个垫子上吗?",
+        "wear": "你想把胳膊放在垫子上吗?",
     }
 
 #init -9 python in mas_selspr:
@@ -20,7 +20,7 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="mj__cushion_acs_select",
-            category=["desk"],
+            category=["桌子"],
             prompt=store.mas_selspr.get_prompt("cushion_acs", "change"),
             pool=True,
             unlocked=False,
@@ -35,12 +35,12 @@ label mj__cushion_acs_select:
     python:
         use_acs = store.mas_selspr.filter_acs(True, group="cushion_acs")
 
-        mailbox = store.mas_selspr.MASSelectableSpriteMailbox("What cushion should I use?")
+        mailbox = store.mas_selspr.MASSelectableSpriteMailbox("我该用什么垫子?")
         sel_map = {}
 
-    m 1eua "Sure [player]!"
+    m 1eua "好的 [player]!"
 
     call mas_selector_sidebar_select_acs(use_acs, mailbox=mailbox, select_map=sel_map, add_remover=True) #add_remover is for a 'None' option, basically
 
     if not _return:
-        m 1eka "Oh, alright."
+        m 1eka "噢，好吧."

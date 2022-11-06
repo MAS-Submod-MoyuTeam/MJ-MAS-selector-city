@@ -6,8 +6,8 @@ init -99 python in mas_selspr:
     PROMPT_MAP["bracelet_acs"] = {
         "_ev": "mj_bracelet_acs_select",
         "_min-items": 1,
-        "change": "Can you change your bracelet?",
-        "wear": "Can you wear a bracelet?",
+        "change": "你能换一下你的手镯吗?",
+        "wear": "你能戴个手镯吗?",
     }
 
 
@@ -18,7 +18,7 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="mj_bracelet_acs_select",
-            category=["appearance"],
+            category=["外观"],
             prompt=store.mas_selspr.get_prompt("bracelet_acs", "change"),
             pool=True,
             unlocked=False,
@@ -33,12 +33,12 @@ label mj_bracelet_acs_select:
     python:
         use_acs = store.mas_selspr.filter_acs(True, group="bracelet_acs")
 
-        mailbox = store.mas_selspr.MASSelectableSpriteMailbox("What kind of bracelet do you want me to wear?")
+        mailbox = store.mas_selspr.MASSelectableSpriteMailbox("你想让我戴什么样的手镯?")
         sel_map = {}
 
-    m 1eua "Sure [player]!"
+    m 1eua "好的 [player]!"
 
     call mas_selector_sidebar_select_acs(use_acs, mailbox=mailbox, select_map=sel_map, add_remover=True) #add_remover is for a 'None' option, basically
 
     if not _return:
-        m 1eka "Oh, alright."
+        m 1eka "噢，好吧."

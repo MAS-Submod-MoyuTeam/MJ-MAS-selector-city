@@ -9,8 +9,8 @@ init -99 python in mas_selspr:
     PROMPT_MAP["table_acs"] = {
         "_ev": "mj_table_acs_select",
         "_min-items": 1,
-        "change": "Can you put something else on your desk?",
-        "wear": "Can you put something on your desk?",
+        "change": "你能放点别的东西在桌子上吗?",
+        "wear": "你能放点东西在桌子上吗?",
     }
 
 #keeping this here incase MAS devs ever try bring the need for this back
@@ -24,8 +24,8 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="mj_table_acs_select",
-            category=["desk"],
-            prompt=store.mas_selspr.get_prompt("table_acs", "change"),
+            category=["桌子"],
+            prompt=store.mas_selspr.get_prompt("table_acs", "改变"),
             pool=True,
             unlocked=False,
             rules={"no_unlock": None},
@@ -39,12 +39,12 @@ label mj_table_acs_select:
     python:
         use_acs = store.mas_selspr.filter_acs(True, group="table_acs")
 
-        mailbox = store.mas_selspr.MASSelectableSpriteMailbox("What would you want me to put on the desk?")
+        mailbox = store.mas_selspr.MASSelectableSpriteMailbox("你想让我在桌子上放什么?")
         sel_map = {}
 
-    m 1eua "Sure [player]!"
+    m 1eua "好的 [player]!"
 
     call mas_selector_sidebar_select_acs(use_acs, mailbox=mailbox, select_map=sel_map, add_remover=True) #add_remover is for a 'None' option, basically
 
     if not _return:
-        m 1eka "Oh, alright."
+        m 1eka "哦，好吧."

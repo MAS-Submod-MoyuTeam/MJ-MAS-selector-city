@@ -6,8 +6,8 @@ init -99 python in mas_selspr:
     PROMPT_MAP["sb_ring_acs"] = {
         "_ev": "mj_ring_acs_select",
         "_min-items": 1,
-        "change": "Can you wear a different ring?",
-        "wear": "Can you wear a ring?",
+        "change": "你可以换一个戒指吗?",
+        "wear": "你可以戴一个戒指吗?",
     }
 
 
@@ -35,9 +35,9 @@ label mj_ring_acs_select:
         mailbox = store.mas_selspr.MASSelectableSpriteMailbox("What ring should I wear?")
         sel_map = {}
 
-    m 1eua "Sure [player]!"
+    m 1eua "好的 [player]!"
 
     call mas_selector_sidebar_select_acs(use_acs, mailbox=mailbox, select_map=sel_map, add_remover=True) #add_remover is for a 'None' option, basically
 
     if not _return:
-        m 1eka "Oh, alright."
+        m 1eka "哦, 好吧."

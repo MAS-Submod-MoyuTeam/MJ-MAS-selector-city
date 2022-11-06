@@ -6,8 +6,8 @@ init -99 python in mas_selspr:
     PROMPT_MAP["ltable_acs"] = {
         "_ev": "gt_ltable_acs_select",
         "_min-items": 1,
-        "change": "Can you put something else on the left side of your desk?",
-        "wear": "Can you put something on the left side of your desk?",
+        "change": "你能在你的桌子左边放点别的东西吗?",
+        "wear": "你能在你的桌子左边放点东西吗?",
     }
 
 
@@ -17,7 +17,7 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="gt_ltable_acs_select",
-            category=["desk"],
+            category=["桌面"],
             prompt=store.mas_selspr.get_prompt("ltable_acs", "change"),
             pool=True,
             unlocked=False,
@@ -32,15 +32,15 @@ label gt_ltable_acs_select:
     python:
         use_acs = store.mas_selspr.filter_acs(True, group="ltable_acs")
 
-        mailbox = store.mas_selspr.MASSelectableSpriteMailbox("What would you like me to put out on my desk?")
+        mailbox = store.mas_selspr.MASSelectableSpriteMailbox("你想让我把什么放在我的桌子上?")
         sel_map = {}
 
-    m 1eua "Sure [player]!"
+    m 1eua "好的 [player]!"
 
     call mas_selector_sidebar_select_acs(use_acs, mailbox=mailbox, select_map=sel_map, add_remover=True) #add_remover is for a 'None' option, basically
 
     if not _return:
-        m 1eka "Oh, alright."
+        m 1eka "哦, 好吧."
 return
 
 
@@ -50,8 +50,8 @@ init -99 python in mas_selspr:
     PROMPT_MAP["rtable_acs"] = {
         "_ev": "gt_rtable_acs_select",
         "_min-items": 1,
-        "change": "Can you put something else on the right side of your desk?",
-        "wear": "Can you put something on the right side of your desk?",
+        "change": "你能把别的东西放在桌子的右边吗?",
+        "wear": "你能把什么东西放在桌子的右边吗?",
     }
 
 
@@ -61,7 +61,7 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="gt_rtable_acs_select",
-            category=["desk"],
+            category=["桌面"],
             prompt=store.mas_selspr.get_prompt("rtable_acs", "change"),
             pool=True,
             unlocked=False,
@@ -76,15 +76,15 @@ label gt_rtable_acs_select:
     python:
         use_acs = store.mas_selspr.filter_acs(True, group="rtable_acs")
 
-        mailbox = store.mas_selspr.MASSelectableSpriteMailbox("What would you like me to put on my desk?")
+        mailbox = store.mas_selspr.MASSelectableSpriteMailbox("你想让我把什么放在我的桌子上?")
         sel_map = {}
 
-    m 1eua "Sure [player]!"
+    m 1eua "好的 [player]!"
 
     call mas_selector_sidebar_select_acs(use_acs, mailbox=mailbox, select_map=sel_map, add_remover=True) #add_remover is for a 'None' option, basically
 
     if not _return:
-        m 1eka "Oh, alright."
+        m 1eka "哦, 好吧."
 return
 
 
@@ -94,8 +94,8 @@ init -99 python in mas_selspr:
     PROMPT_MAP["flowers_acs"] = {
         "_ev": "gt_flowers_acs_select",
         "_min-items": 1,
-        "change": "Can you put out a different set of flowers?",
-        "wear": "Can you put some flowers on your desk?",
+        "change": "你可以换一朵花吗?",
+        "wear": "你可以在桌子上放一朵花吗?",
     }
 
 
@@ -105,7 +105,7 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="gt_flowers_acs_select",
-            category=["desk"],
+            category=["桌面"],
             prompt=store.mas_selspr.get_prompt("flowers_acs", "change"),
             pool=True,
             unlocked=False,
@@ -120,13 +120,13 @@ label gt_flowers_acs_select:
     python:
         use_acs = store.mas_selspr.filter_acs(True, group="flowers_acs")
 
-        mailbox = store.mas_selspr.MASSelectableSpriteMailbox("What flowers would you like me to put out on the desk?")
+        mailbox = store.mas_selspr.MASSelectableSpriteMailbox("你想让我换什么花呢?")
         sel_map = {}
 
-    m 1eua "Sure [player]!"
+    m 1eua "好的 [player]!"
 
     call mas_selector_sidebar_select_acs(use_acs, mailbox=mailbox, select_map=sel_map, add_remover=True) #add_remover is for a 'None' option, basically
 
     if not _return:
-        m 1eka "Oh, alright."
+        m 1eka "哦, 好吧."
 return
