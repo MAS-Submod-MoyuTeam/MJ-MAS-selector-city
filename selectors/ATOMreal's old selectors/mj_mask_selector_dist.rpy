@@ -20,7 +20,7 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="mj_mask_select",
-            category=["外表"],
+            category=["外观"],
             prompt=store.mas_selspr.get_prompt("面具", "改变"),
             pool=True,
             unlocked=False,
