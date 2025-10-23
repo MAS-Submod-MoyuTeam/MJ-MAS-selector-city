@@ -21,7 +21,7 @@ init 5 python:
             persistent.event_database,
             eventlabel="mj_facepaint_acs_select",
             category=["外观"],
-            prompt=store.mas_selspr.get_prompt("_acs", "改变"),
+            prompt=store.mas_selspr.get_prompt("_acs", "change"),
             pool=True,
             unlocked=False,
             rules={"no_unlock": None},
@@ -35,7 +35,7 @@ label mj_facepaint_acs_select:
     python:
         use_acs = store.mas_selspr.filter_acs(True, group="facepaint_acs")
 
-        mailbox = store.mas_selspr.MASSelectableSpriteMailbox("?")
+        mailbox = store.mas_selspr.MASSelectableSpriteMailbox("我应该画什么样的面部彩绘?")
         sel_map = {}
 
     m 1eua "好的 [player]!"

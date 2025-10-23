@@ -5,7 +5,7 @@
 init -99 python in mas_selspr:
 
     # prompt constants go here
-    PROMPT_MAP["面具"] = {
+    PROMPT_MAP["mask"] = {
         "_ev": "mj_mask_select",
         "_min-items": 1,
         "change": "你能换下你的面具吗?",
@@ -21,7 +21,7 @@ init 5 python:
             persistent.event_database,
             eventlabel="mj_mask_select",
             category=["外观"],
-            prompt=store.mas_selspr.get_prompt("面具", "改变"),
+            prompt=store.mas_selspr.get_prompt("mask", "change"),
             pool=True,
             unlocked=False,
             rules={"no_unlock": None},

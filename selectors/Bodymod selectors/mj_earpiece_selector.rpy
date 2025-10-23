@@ -21,7 +21,7 @@ init 5 python:
             persistent.event_database,
             eventlabel="mj_ear_acs_select",
             category=["外观"],
-            prompt=store.mas_selspr.get_prompt("ear_acs", "改变"),
+            prompt=store.mas_selspr.get_prompt("ear_acs", "change"),
             pool=True,
             unlocked=False,
             rules={"no_unlock": None},
