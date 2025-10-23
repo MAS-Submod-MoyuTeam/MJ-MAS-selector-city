@@ -17,7 +17,7 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="mj_ring_acs_select",
-            category=["appearance"],
+            category=["外观"],
             prompt=store.mas_selspr.get_prompt("sb_ring_acs", "change"),
             pool=True,
             unlocked=False,
@@ -32,7 +32,7 @@ label mj_ring_acs_select:
     python:
         use_acs = store.mas_selspr.filter_acs(True, group="sb_ring_acs")
 
-        mailbox = store.mas_selspr.MASSelectableSpriteMailbox("What ring should I wear?")
+        mailbox = store.mas_selspr.MASSelectableSpriteMailbox("我应该戴什么样的戒指?")
         sel_map = {}
 
     m 1eua "好的 [player]!"

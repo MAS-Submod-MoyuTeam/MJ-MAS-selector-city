@@ -16,7 +16,7 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="mj_pin_acs_select",
-            category=["appearance"],
+            category=["外观"],
             prompt=store.mas_selspr.get_prompt("pin_acs", "change"),
             pool=True,
             unlocked=False,

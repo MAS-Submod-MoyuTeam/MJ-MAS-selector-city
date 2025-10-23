@@ -25,7 +25,7 @@ init 5 python:
             persistent.event_database,
             eventlabel="mj_table_acs_select",
             category=["桌子"],
-            prompt=store.mas_selspr.get_prompt("table_acs", "改变"),
+            prompt=store.mas_selspr.get_prompt("table_acs", "change"),
             pool=True,
             unlocked=False,
             rules={"no_unlock": None},
