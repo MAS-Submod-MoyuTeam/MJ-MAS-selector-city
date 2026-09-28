@@ -6,8 +6,8 @@ init -99 python in mas_selspr:
     PROMPT_MAP["headpiece_acs"] = {
         "_ev": "mj_headpiece_acs_select",
         "_min-items": 1,
-        "change": "你能换一下你的头盔吗?",
-        "wear": "你能戴个头盔吗?",
+        "change": "你能换一下你的头饰吗?",
+        "wear": "你能戴个头饰吗?",
     }
 
 
@@ -33,7 +33,7 @@ label mj_headpiece_acs_select:
     python:
         use_acs = store.mas_selspr.filter_acs(True, group="headpiece_acs")
 
-        mailbox = store.mas_selspr.MASSelectableSpriteMailbox("你想让我戴什么样的头盔?")
+        mailbox = store.mas_selspr.MASSelectableSpriteMailbox("你想让我戴什么样的头饰?")
         sel_map = {}
 
     m 1eua "好的 [player]!"
