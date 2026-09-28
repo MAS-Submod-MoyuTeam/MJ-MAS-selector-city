@@ -5,7 +5,7 @@ init -990 python in mas_submod_utils:
         author="MayJay",
         name="Selector City",
         description="由 u/MAS-Submod-MoyuTeam 维护的一组精灵包选择器. Discord: https://discord.gg/Tx23rczN8N ",
-        version="1.0.3",
+        version="1.0.3.1",
         dependencies={},
         settings_pane=None,
         version_updates={}
